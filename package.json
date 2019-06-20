@@ -1,7 +1,12 @@
 {
   "name": "nice-anim",
-  "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "version": "0.1.0",
+  "description": "An animate on scroll Web Component built with StencilJS",
+  "keywords": [
+    "animate",
+    "scroll",
+    "reveal"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -21,7 +26,15 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
-    "@stencil/core": "1.0.0-beta.8"
+    "@stencil/core": "^1.0.7"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nicell/nice-anim.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nicell/nice-anim/issues"
+  },
+  "homepage": "https://github.com/Nicell/nice-anim",
   "license": "MIT"
 }
