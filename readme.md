@@ -36,3 +36,10 @@ There are 3 options to install `nice-anim`.
  - Run `npm install nice-anim --save`
  - Add `import 'nice-anim';`
  - Then you can use the element anywhere in your template, JSX, html etc.
+
+## Intersection Observer Polyfill
+[Some browsers don't have the Intersection Observer API.](https://caniuse.com/#search=intersectionobserver) You can include the following script to add support to those browsers without it.
+
+`<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>`
+
+You can read more about Intersection Observer polyfills [here](https://github.com/w3c/IntersectionObserver/tree/master/polyfill).
