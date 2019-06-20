@@ -7,9 +7,18 @@
   }
 }
 
+@keyframes slide-down {
+  0% {
+    transform: translateY(var(--distance));
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes slide-right {
   0% {
-    transform: translateX(calc(-1 * var(--distance)));
+    transform: translateX(var(--distance));
   }
   100% {
     opacity: 1;
@@ -34,6 +43,10 @@
 
 .slide-up {
   animation-name: slide-up;
+}
+
+.slide-down {
+  animation-name: slide-down;
 }
 
 .slide-right {

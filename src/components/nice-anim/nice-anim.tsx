@@ -11,7 +11,7 @@ export class NiceAnim {
   /**
    * Direction the element moves when animating in
    */
-  @Prop() direction: 'up' | 'right' | 'left' = 'up';
+  @Prop() direction: 'up' | 'down' | 'right' | 'left' = 'up';
 
   /**
    * How long to delay the animation (ms)
@@ -37,7 +37,8 @@ export class NiceAnim {
 
   componentDidLoad() {
     this.addIntersectionObserver();
-    (this.el.querySelector('.nice-anim') as HTMLElement).style.setProperty('--distance', this.animationDistance);
+    const animationDistance = this.direction === 'right' || this.direction === 'down' ? '-' + this.animationDistance : this.animationDistance;
+    (this.el.querySelector('.nice-anim') as HTMLElement).style.setProperty('--distance', animationDistance);
   }
 
   addIntersectionObserver() {

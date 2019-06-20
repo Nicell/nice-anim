@@ -21,7 +21,7 @@ export namespace Components {
     /**
     * Direction the element moves when animating in
     */
-    'direction': 'up' | 'right' | 'left';
+    'direction': 'up' | 'down' | 'right' | 'left';
     /**
     * How long the animation runs (ms)
     */
@@ -59,7 +59,7 @@ declare namespace LocalJSX {
     /**
     * Direction the element moves when animating in
     */
-    'direction'?: 'up' | 'right' | 'left';
+    'direction'?: 'up' | 'down' | 'right' | 'left';
     /**
     * How long the animation runs (ms)
     */
