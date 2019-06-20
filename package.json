@@ -1,6 +1,6 @@
 {
   "name": "nice-anim",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An animate on scroll Web Component built with StencilJS",
   "keywords": [
     "animate",
