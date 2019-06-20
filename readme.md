@@ -4,7 +4,7 @@
 ![npm](https://img.shields.io/npm/v/nice-anim.svg?style=flat-square)
 
 <div align="center">
-  <img height="400" src="img/in-use.gif">
+  <img height="400" src="img/in-use.gif"><br>
   <i>Example of use from nick.winans.codes</i>
 </div>
 
