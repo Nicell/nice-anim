@@ -24,7 +24,7 @@ nice-anim is a Web Component that allows you to easily animate elements when scr
 There are 3 options to install `nice-anim`.
 
 ### Script tag
- - Put `<script src='https://unpkg.com/nice-anim@0.1.0/dist/nice-anim.js'></script>` in the head of your index.html.
+ - Put `<script src='https://unpkg.com/nice-anim/dist/nice-anim.js'></script>` in the head of your index.html.
  - Then you can use the element anywhere in your template, JSX, html etc.
 
 ### Node Modules
