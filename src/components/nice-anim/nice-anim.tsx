@@ -33,12 +33,25 @@ export class NiceAnim {
    */
   @Prop() triggerDistance: string = '33%';
 
+  /**
+   * Use this class, in case of no support for IntersectionObserver (server side rendering)
+   */
+  @Prop() fallbackCSSClass: string = 'nice-anim';
+
   io: IntersectionObserver;
 
+  hasIOSupport: boolean;
+
+  constructor() {
+    this.hasIOSupport = typeof IntersectionObserver !== 'undefined';
+  }
+
   componentDidLoad() {
-    this.addIntersectionObserver();
-    const animationDistance = this.direction === 'right' || this.direction === 'down' ? '-' + this.animationDistance : this.animationDistance;
-    (this.el.querySelector('.nice-anim') as HTMLElement).style.setProperty('--distance', animationDistance);
+    if (this.hasIOSupport) {
+      this.addIntersectionObserver();
+      const animationDistance = this.direction === 'right' || this.direction === 'down' ? '-' + this.animationDistance : this.animationDistance;
+      (this.el.querySelector('.nice-anim') as HTMLElement).style.setProperty('--distance', animationDistance);
+    }
   }
 
   addIntersectionObserver() {
@@ -63,7 +76,7 @@ export class NiceAnim {
   render() {
     return (
       <div
-        class="nice-anim"
+        class={`${this.hasIOSupport ? 'nice-anim' : this.fallbackCSSClass}`}
         style={{
           animationDuration: `${this.duration}ms`,
           animationDelay: `${this.delay}ms`
