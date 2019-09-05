@@ -27,10 +27,6 @@ export namespace Components {
     */
     'duration': number;
     /**
-    * Use this class, in case of no support for IntersectionObserver (server side rendering)
-    */
-    'fallbackCSSClass': string;
-    /**
     * How much of the element must be visible before it animates (% of element height)
     */
     'triggerDistance': string;
@@ -68,10 +64,6 @@ declare namespace LocalJSX {
     * How long the animation runs (ms)
     */
     'duration'?: number;
-    /**
-    * Use this class, in case of no support for IntersectionObserver (server side rendering)
-    */
-    'fallbackCSSClass'?: string;
     /**
     * How much of the element must be visible before it animates (% of element height)
     */

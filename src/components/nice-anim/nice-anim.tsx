@@ -1,4 +1,6 @@
-import { Component, Element, Prop, h } from '@stencil/core';
+import { Component, Element, Prop, h, Build } from '@stencil/core';
+
+import { NiceAnimConfig } from './nice-anim-config';
 
 @Component({
   tag: 'nice-anim',
@@ -33,17 +35,22 @@ export class NiceAnim {
    */
   @Prop() triggerDistance: string = '33%';
 
-  /**
-   * Use this class, in case of no support for IntersectionObserver (server side rendering)
-   */
-  @Prop() fallbackCSSClass: string = 'nice-anim';
-
   io: IntersectionObserver;
 
   hasIOSupport: boolean;
 
+  config: NiceAnimConfig;
+
+  cssClass: string;
+
   constructor() {
     this.hasIOSupport = typeof IntersectionObserver !== 'undefined';
+    this.config = NiceAnimConfig.getInstance();
+    this.cssClass = Build.isBrowser
+      ? this.hasIOSupport
+        ? 'nice-anim'
+        : this.config.fallbackCssClass
+      : this.config.ssrCssClass;
   }
 
   componentDidLoad() {
@@ -76,7 +83,7 @@ export class NiceAnim {
   render() {
     return (
       <div
-        class={`${this.hasIOSupport ? 'nice-anim' : this.fallbackCSSClass}`}
+        class={this.cssClass}
         style={{
           animationDuration: `${this.duration}ms`,
           animationDelay: `${this.delay}ms`
